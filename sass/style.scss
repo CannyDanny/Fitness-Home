@@ -1,0 +1,551 @@
+/*
+Theme Name: WordPress Fitness
+Author: Denis Plzak
+Description: Bootstrap Wordpress Theme For Fitness Gym
+Version: 1.0
+*/
+/*
+ * Globals
+ */
+@import "variables";
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: $black;
+  color: #ffffff;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  color: $white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container section p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.logo {
+  display: flex;
+  margin-left: 50px;
+  h3 {
+    width: 70px;
+  }
+}
+
+.yellow {
+  color: $yellow
+}
+
+/*
+ * Masthead for nav
+ */
+
+.blog-masthead {
+  background-color: $black;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+  border-bottom: 1px solid $yellow;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+/* Nav links */
+.blog-nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 200;
+}
+
+.blog-nav-item:hover,
+.blog-nav-item:focus {
+  color: $white;
+  text-decoration: none;
+}
+
+/* Active state gets a caret at the bottom */
+.blog-nav .active {
+  color: $white;
+}
+
+.blog-nav .active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  vertical-align: middle;
+  content: " ";
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid;
+  border-left: 5px solid transparent;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 5%;
+  li a {
+    font-size: 20px;
+    color: $white;
+    &:hover {
+      color: $yellow;
+      background-color: transparent;
+    }
+  }
+  :nth-child(5) {
+    background: $yellow;
+    border-radius: 10px;
+  }
+
+}
+
+/* Buttons */
+
+.front-button {
+  padding: 25px;
+  background-color: $yellow;
+  color: $black;
+  border-radius: 10px;
+  font-size: 20px;
+  &:hover {
+    color: $white;
+  }
+}
+
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.blog-title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-weight: normal;
+}
+
+.blog-description {
+  font-size: 20px;
+  color: $mediumGray;
+}
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+
+.sidebar-module-inset {
+  p:last-child, ul:last-child, ol:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+  > li > a {
+    width: 140px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 30px;
+  }
+}
+
+/* Boxes */
+
+.boxes {
+  h1 {
+    margin-top: 50px;
+    text-align: center;
+  }
+}
+
+.box {
+  opacity: 0.6;
+  margin: 50px 0px 100px 0px;
+  &:hover {
+    opacity: 1;
+    transition: 1s;
+  }
+  h3 {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    color: $white;
+    padding: 20px 40px;
+    font-size: 25px;
+    border: 1px solid $yellow;
+    border-radius: 10px;
+    &:hover {
+      background-color: $yellow;
+      color: $black;
+    }
+  }
+}
+
+/* Pricing box */
+
+.col {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.price-box {
+  background: $white;
+  color: $darkGray;
+  list-style-type: none;
+  border: 1px solid $darkGray;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+  &:hover, &.best {
+    box-shadow: 0 10px 15px 0 $black;
+  }
+  .header {
+    background-color: $black;
+    color: $white;
+    font-size: 25px;
+    &.header-green {
+      background-color: $yellow;
+    }
+  }
+  li {
+    padding: 20px;
+    border-bottom: 1px solid $lightGray;
+    text-align: center;
+  }
+  .emph {
+    background-color: $lightGray;
+    font-size: 18px;
+  }
+}
+
+.button {
+  background-color: $yellow;
+  border: none;
+  color: $white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+  margin-bottom: 60px;
+}
+
+.blog-post-title {
+  margin-bottom: 50px;
+  font-size: 40px;
+  text-align: center;
+
+  a {
+    color: $yellow;
+  }
+}
+
+.blog-post-meta {
+  margin-bottom: 20px;
+  color: $mediumGray;
+  a {
+    color: $yellow;
+  }
+}
+
+/* Form */
+
+form label {
+  font-weight: 100;
+
+}
+
+input {
+  background-color: $black;
+  border: 1px solid $darkGray;
+  height: 60px;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+input[type="submit"] {
+  background-color: $yellow;
+  border: none;
+  border-radius: 10px;
+  color: $white;
+  padding: 10px 35px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Footer */
+
+.blog-footer {
+  padding: 40px 0;
+  color: $mediumGray;
+  text-align: center;
+  background-color: $black;
+  border-top: 1px solid $lightGray;
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  li {
+    list-style: none;
+    a {
+      color: $white;
+      font-size: 15px;
+      font-weight: 200;
+      &:hover {
+        color: $yellow;
+        font-size: 15px;
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+/*
+ * Custom Styles
+ *
+ */
+
+.showcase {
+  h1 {
+    position: absolute;
+    bottom: 60%;
+    left: 45%;
+    z-index: 1;
+    font-size: 55px;
+    padding-bottom: 20px;
+    color: $white;
+  }
+  p {
+    position: absolute;
+    bottom: 50%;
+    left: 40%;
+    z-index: 1;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  a {
+    position: absolute;
+    bottom: 40%;
+    left: 45%;
+    z-index: 1;
+  }
+}
+
+.post-thumb img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.comments {
+  border: 1px $lightGray solid;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  h3, h2 {
+    color: $white;
+    padding: 5px;
+  }
+}
+
+.comment-body {
+  border: $white solid 1px;
+  margin-bottom: 10px;
+  padding: 20px 10px;
+}
+
+.comment-meta {
+  color: $white;
+  padding: 10px;
+  overflow: auto;
+  a {
+    color: $white;
+  }
+  img {
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+.comment-reply-link {
+  color: $white;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.comment-form {
+  input, textarea {
+    width: 100%;
+    padding: 4px;
+    border: #f4f4f4 solid 1px;
+    margin-bottom: 15px;
+  }
+}
+
+.post-gallery {
+  background: #333;
+  color: $white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Testimonials */
+
+.testimonials {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0px;
+  h1 {
+    color: $yellow;
+    text-align: center;
+    margin: 30px 0px;
+  }
+
+  .testimonial-box img {
+    display: block;
+    margin: 20px auto;
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+
+  }
+}
+
+/* Social Icons */
+
+/* footer social icons */
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+  li {
+    display: inline;
+    margin: 0 5px;
+  }
+}
+
+/* footer social icons */
+.social-network a {
+  &.icoRss:hover {
+    background-color: $iconRss;
+  }
+  &.icoFacebook:hover {
+    background-color: $facebook;
+  }
+  &.icoTwitter:hover {
+    background-color: $twitter;
+  }
+  &.icoGoogle:hover {
+    background-color: $google;
+  }
+  &.icoLinkedin:hover {
+    background-color: $linkedin;
+  }
+}
+
+.social-network a {
+  &.icoRss:hover i, &.icoFacebook:hover i, &.icoTwitter:hover i, &.icoGoogle:hover i, &.icoVimeo:hover i, &.icoLinkedin:hover i {
+    color: $white;
+  }
+}
+
+.social-circle li {
+  a {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  i {
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+  }
+  a:hover i {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+}
+
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-circle i {
+  color: $white;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
